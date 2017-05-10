@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>Entrenado de Simon</title>
+<link rel="stylesheet" href="css/normalize.css" />
+<link rel="stylesheet" href="css/ion.rangeSlider.css" />
+<link rel="stylesheet" href="css/ion.rangeSlider.skinSimple.css" />
+ <link rel="stylesheet" href="css/morris.css">
+
+
+<style type="text/css">
+	
+body{
+  background-color:rgb(16,18,20);	
+}	
+
+.caja{
+  background-color:rgb(54,54,54);
+  overflow: hidden;	
+}
+
+#rango-fecha{
+ width:80%;
+ position:absolute;
+ top:20px;
+ left:10%;
+ 	
+}
+
+#controles{
+ width:200px;
+ position:absolute;
+ top:110px;
+ left:10%;
+ 	
+ height:200px;	
+}
+
+#malasbuenas{
+ width:400px;
+ position:absolute;
+ top:110px;
+ left:calc(10% + 210px);
+ height:200px;	
+}
+
+#totales{
+ width:400px;
+ position:absolute;
+ top:110px;
+ left:calc(10% + 620px);
+ height:200px;	
+}
+
+
+
+.fecha{
+	width:100%;
+	text-align: center;
+	color:lightgray;
+	padding: 10px 0px 0px 0px;
+	font-size: 12px;
+}
+
+</style>>
+
+</head>
+<body>
+
+
+<div class="caja" id="rango-fecha">
+  <div style="padding:10px 40px 10px 40px;">
+    <input type="text" id="range" value="" name="range" />
+  </div>
+</div>
+
+<div class="caja" id="controles">
+  <div class="fecha" id="ventana">ventana</div>
+  <div class="fecha" id="fecha1">fecha1</div>
+  <div class="fecha" id="fecha2">fecha2</div>
+</div>
+
+
+<div class="caja" id="malasbuenas">
+  
+</div>
+
+<div class="caja" id="totales">
+  
+</div>
+
+
+
+<!-- All JS -->
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/ion.rangeSlider.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/moment_es.js"></script>
+<script src="js/entrenar.js"></script>
+
+
+ <script src="js/percentpie.js"></script>
+
+<script src="js/raphael-min.js"></script>
+<script src="js/morris.js"></script>
+
+
+
+</body>
+</html>

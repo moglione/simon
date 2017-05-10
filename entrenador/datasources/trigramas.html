@@ -1,0 +1,219 @@
+
+<style type="text/css">
+	
+
+
+.contenedor{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left:0;
+	top:0;
+	padding:0px;
+	margin: 0px;
+	/*--------------*/
+	padding-top:5px;
+	font-family: monserrat-semibold, sans-serif;
+
+}	
+
+
+
+.titulo{
+	color:white;
+	font-size:12px;
+	width:100%;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: 400;
+	position:absolute;
+	left:0px;
+	top:10px;
+}
+
+
+@keyframes grow-padding-right {
+    from {
+      width: 0;
+    }
+}
+
+
+
+
+.barra {
+  color: white;
+  
+  margin-bottom: 1px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+
+}
+
+.lineatri {
+	
+  background: rgba(242,0,5,0.6);
+  padding: 3px;
+  
+  width: 80px;
+  font-size: 10px;
+  /* para que no se corte la palabra a medida que crece la barra*/
+  white-space: nowrap;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  
+}
+
+.valor{
+  
+  position: absolute;
+  right:5px;
+  top:50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  
+}
+
+
+.grafico-barra{
+	width:90%;
+	position: absolute;
+	left:5%;
+	top:45px;
+	font-family: monserrat-regular, sans-serif;	
+}
+
+
+</style>
+
+ 
+<div class="contenedor" >
+
+  <div class="titulo">TEMAS MAS MENCIONADOS<br>Trigramas</div>
+
+    <div class="grafico-barra">
+
+     <loop1>   
+	  
+	      <div class="barra">
+	        <div class="lineatri" style="width:45%;">&nbsp;nbsp nbsp nbsp</div><div class="valor">1131</div>
+	      </div>
+	      
+          
+	 </loop1><loop1>   
+	  
+	      <div class="barra">
+	        <div class="lineatri" style="width:45%;">&nbsp;pic twitter com</div><div class="valor">75</div>
+	      </div>
+	      
+          
+	 </loop1><loop1>   
+	  
+	      <div class="barra">
+	        <div class="lineatri" style="width:45%;">&nbsp;presidente mauricio macri</div><div class="valor">69</div>
+	      </div>
+	      
+          
+	 </loop1><loop1>   
+	  
+	      <div class="barra">
+	        <div class="lineatri" style="width:45%;">&nbsp;fuente nbsp notiexpress</div><div class="valor">62</div>
+	      </div>
+	      
+          
+	 </loop1><loop1>   
+	  
+	      <div class="barra">
+	        <div class="lineatri" style="width:45%;">&nbsp;ma ntilde ana</div><div class="valor">57</div>
+	      </div>
+	      
+          
+	 </loop1><loop1>   
+	  
+	      <div class="barra">
+	        <div class="lineatri" style="width:45%;">&nbsp;gobernador miguel lifschitz</div><div class="valor">50</div>
+	      </div>
+	      
+          
+	 </loop1><loop1>   
+	  
+	      <div class="barra">
+	        <div class="lineatri" style="width:45%;">&nbsp;pr oacute ximo</div><div class="valor">48</div>
+	      </div>
+	      
+          
+	 </loop1><loop1>   
+	  
+	      <div class="barra">
+	        <div class="lineatri" style="width:45%;">&nbsp;pol iacute tica</div><div class="valor">39</div>
+	      </div>
+	      
+          
+	 </loop1><loop1>   
+	  
+	      <div class="barra">
+	        <div class="lineatri" style="width:45%;">&nbsp;provincia buenos aires</div><div class="valor">39</div>
+	      </div>
+	      
+          
+	 </loop1><loop1>   
+	  
+	      <div class="barra">
+	        <div class="lineatri" style="width:45%;">&nbsp;rodr iacute guez</div><div class="valor">38</div>
+	      </div>
+	      
+          
+	 </loop1><loop1>   
+	  
+	      <div class="barra">
+	        <div class="lineatri" style="width:45%;">&nbsp;intendenta mónica fein</div><div class="valor">38</div>
+	      </div>
+	      
+          
+	 </loop1><loop1>   
+	  
+	      <div class="barra">
+	        <div class="lineatri" style="width:45%;">&nbsp;hab iacute an</div><div class="valor">35</div>
+	      </div>
+	      
+          
+	 </loop1><loop1>   
+	  
+	      <div class="barra">
+	        <div class="lineatri" style="width:45%;">&nbsp;ex presidenta cristina</div><div class="valor">32</div>
+	      </div>
+	      
+          
+	 </loop1>
+
+     
+    
+    </div>
+ 
+</div>
+</div>
+  
+
+<script>
+
+
+var valorInicial=0; 
+var valorBarra=0;
+$('.barra').each(function (index, value) { 
+    
+    valorBarra=$(this).children(".valor").text();
+    if(valorInicial==0){ 
+    	valorInicial=valorBarra;
+        $(this).children(".lineatri").css("width","85%"); 
+        return true;
+    }	
+
+    valorBarra= (valorBarra / valorInicial) * 85;
+    $(this).children(".lineatri").css("width",valorBarra+"%");
+
+});
+
+</script>
+
+

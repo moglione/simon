@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simon (SIstema MONitoreo)</title>
+		<meta content="text/html; charset=utf-8" http-equiv="content-type">
+		
+
+        <link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/ion.rangeSlider.css" />
+		<link rel="stylesheet" href="css/ion.rangeSlider.skinSimple.css" />
+ 		<link rel="stylesheet" href="css/morris.css">
+
+
+		
+		<style type="text/css">
+			   
+			.size2-2 {
+				width: 80px;
+				height: 80px;
+			}
+
+			.size11 {
+				height: 160px;
+				width: 160px;
+			}
+
+			.size12 {
+				width: 160px;
+				height: 320px;
+			}
+
+			.size21 {
+				width: 320px;
+				height: 160px;
+			}
+
+			.size22 {
+				height: 320px;
+				width: 320px;
+			}
+
+			.size13 {
+				width: 160px;
+				height: 480px;
+			}
+
+			.size31 {
+				width: 480px;
+				height: 160px;
+			}
+
+			.size23 {
+				width: 320px;
+				height: 480px;
+			}
+
+			.size24 {
+				width: 320px;
+				height: 640px;
+			}
+
+			.size32 {
+				width: 480px;
+				height: 320px;
+			}
+
+			.size33 {
+				width: 480px;
+				height: 480px;
+			}
+
+			.size34 {
+				width: 480px;
+				height: 640px;
+			}
+
+			.size43 {
+				width: 640px;
+				height: 480px;
+			}
+
+			.size35 {
+				width: 480px;
+				height: 800px;
+			}
+
+			.size53 {
+				width: 800px;
+				height: 480px;
+			}
+
+			.size36 {
+				width: 480px;
+				height: 960px;
+			}
+
+			
+			.sizeFullHalf {
+				width: 1120px;
+				height: 80px;
+			}
+
+			.sizeFullquarter {
+				width: 1120px;
+				height: 40px;
+			}
+
+            .sizeMedio1 {
+				height: 215px;
+				width: 160px;
+			}
+                      
+
+            .size33 {
+				width: 550px;
+				height: 240px;
+			}
+ 
+            .sizeTercio {
+				width: 360px;
+				height: 320px;
+			}
+
+
+			.brick {
+				background-color:rgb(54,54,54);
+			  	float: left;
+				cursor: default;
+				overflow: hidden;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+			}
+
+
+			.free-wall {
+				margin: 20px auto;
+				width:1120px;
+			}
+	
+
+	        .size11 {
+				height: 215px;
+				width: 215px;
+			} 
+
+            /*--------------------------------------*/
+
+			body{
+			  background-color:rgb(16,18,20);	
+			}	
+
+			.caja{
+			  background-color:rgb(54,54,54);
+			  overflow: hidden;	
+			  width:100%;
+			  height: 100%;
+			}
+
+			#rango-fecha{
+			 width:80%;
+			 position:absolute;
+			 top:20px;
+			 left:10%;
+			 	
+			}
+
+			#controles{
+			 width:200px;
+			 position:absolute;
+			 top:110px;
+			 left:10%;
+			 	
+			 height:200px;	
+			}
+
+		
+	
+
+
+
+			.fecha{
+				
+				color:lightgray;
+				font-size: 12px;
+			}
+
+            #fecha2{ position: absolute; right:20px; }
+            #fecha1{ position: absolute; left:20px; }
+            #ventana{ position: absolute; left:50%; transform: translateX(-50%); }
+
+
+		</style>
+	</head>
+	
+	<body>
+	
+		
+	
+		<div id="freewall" class="free-wall">
+			
+			<div class="brick sizeFullHalf">
+				<div style="padding:10px 40px 10px 40px;">
+    				<input type="text" id="range" value="" name="range" />
+  				</div> 
+			</div>
+			
+           <div class="brick sizeFullquarter">
+				<div style="padding:10px 40px 10px 40px;">
+	    			<div class="fecha" id="fecha1">fecha1</div>
+	  				<div class="fecha" id="ventana">ventana</div>
+	  				<div class="fecha" id="fecha2">fecha2</div>	
+  				</div> 
+			</div> 
+
+         	<div class="brick sizeMedio1">
+					
+			</div>
+
+
+			<div class="brick size11">
+           	   <div class="caja" id="noticias_buenas"> </div>
+		       
+			</div>
+
+			<div class="brick size11">
+		       <div class="caja" id="noticias_malas"> </div>
+			</div>
+
+			<div class="brick size11">
+		       <div class="caja" id="humor"> </div>
+			</div>
+
+			 <div class="brick size11">
+		        <div class="caja" id="polaridad"> </div>
+			</div> 
+		
+		   	<div class="brick size33">
+		       <div class="caja" id="malasbuenas"> </div>
+			</div>
+		
+		   	<div class="brick size33">
+		      <div class="caja" id="totales"> </div>
+			</div>
+
+
+            <div class="brick sizeTercio">
+		        <div class="caja" id="bigramas"> </div>
+			</div> 
+
+
+            <div class="brick sizeTercio">
+		       <div class="caja" id="trigramas"> </div>
+			</div> 
+
+
+           
+
+
+           
+
+		</div>
+
+
+<!-- All JS -->
+<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="js/freewall.js"></script>
+<script type="text/javascript" src="js/centering.js"></script>
+		
+<script src="js/ion.rangeSlider.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/moment_es.js"></script>
+<script src="js/entrenar.js"></script>
+<script src="js/percentpie.js"></script>
+<script src="js/raphael-min.js"></script>
+<script src="js/morris.js"></script>
+
+
+
+		<script type="text/javascript">
+
+		
+			$(function() {
+				var wall = new Freewall("#freewall");
+				wall.reset({
+					selector: '.brick',
+					animate: true,
+					cellW: 80,
+					cellH: 20,
+					delay: 50,
+					gutterX: 5,
+					gutterY: 5, 
+					onResize: function() { wall.fitWidth(); }
+				});
+				wall.fitWidth();
+				
+
+			});
+		</script>
+	</body>
+</html>

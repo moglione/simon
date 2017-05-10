@@ -1,0 +1,30 @@
+
+<!-- saved from url=(0079)http://evg-zhabotinsky.github.io/RandomStuff/webexperiments/fullscreen/w3s.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script language="jscript">
+		function goFullscreen() {
+			// Must be called as a result of user interaction to work
+			mf = document.getElementById("main_frame");
+			mf.webkitRequestFullscreen();
+			mf.style.display="";
+		}
+
+		function fullscreenChanged() {
+			if (document.webkitFullscreenElement == null) {
+				mf = document.getElementById("main_frame");
+				mf.style.display="none";
+			}
+		}
+
+		document.onwebkitfullscreenchange = fullscreenChanged;
+		document.documentElement.onclick = goFullscreen;
+		document.onkeydown = goFullscreen;
+	</script>
+</head>
+<body style="margin:0" cz-shortcut-listen="true">
+	<h1>Click anywhere or press any key to browse <u>w3schools</u> in fullscreen.</h1>
+	<iframe id="main_frame" src="movil.html" style="width: 100%; height: 100%; border: none; display: none;"></iframe>
+
+
+
+</body></html>

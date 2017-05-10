@@ -1,0 +1,140 @@
+
+<style type="text/css">
+	
+
+
+.contenedor{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left:0;
+	top:0;
+	padding:0px;
+	margin: 0px;
+	/*--------------*/
+	padding-top:5px;
+	font-family: monserrat-semibold, sans-serif;
+
+}	
+
+
+
+
+
+
+.titulo{
+	color:white;
+	font-size:12px;
+	width:100%;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: 400;
+	position:absolute;
+	left:0px;
+	top:10px;
+}
+
+@keyframes grow-padding-right {
+    from {
+      width: 0;
+    }
+}
+
+
+
+
+.barrapol {
+  color: white;
+  background: rgba(255,0,0,0.6);
+  margin-bottom: 1px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 20px;
+
+
+}
+
+.lineapol {
+  background: rgba(0,255,0,0.6);
+  padding: 3px;
+  width: 80px;
+  font-size: 10px;
+  /* para que no se corte la palabra a medida que crece la barra*/
+  white-space: nowrap;
+  text-align: center;
+  height: 100%;
+  
+}
+
+.valneg{
+  
+  position: absolute;
+  right:5px;
+  top:50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+}
+
+.valpos{
+  
+  position: absolute;
+  left:5px;
+  top:50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+}
+
+
+.mediopol{
+  
+  position: absolute;
+  right:0px;
+  top:0px;
+  font-size: 10px;
+  padding: 3px;
+  width:100%;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+
+}
+
+.grafico-barra{
+	width:90%;
+	position: absolute;
+	left:5%;
+	top:20px;
+	font-family: monserrat-regular, sans-serif;	
+}
+
+</style>
+
+
+<div class="contenedor" >
+
+  <div class="titulo">POLARIZACION DE LOS MEDIOS</div>
+
+    <div class="grafico-barra" style="top:35px;">
+
+     <loop1>   
+	 [bloque1;block=loop1] 
+	      <div class="barrapol">
+	       
+	        <div class="lineapol" style="width:[bloque1.positiva]%;"></div><div class="valpos">[bloque1.positiva]%</div><div class="valneg">[bloque1.negativa]%</div>
+	         <div class="mediopol"> [bloque1.medio;strconv=no] </div>
+	      </div>
+	      
+          
+	 </loop1>
+
+     
+    
+    </div>
+ 
+</div>
+</div>
+
+
+

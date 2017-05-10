@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>SIMON ADMIN</title>
+  
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+  
+<style>
+
+/* reset CSS */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+/* Fin reset css */
+      
+
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: normal;
+    src: url(fonts/Lato-Regular.ttf) format("truetype");
+  }
+
+
+
+@font-face {
+    font-family: "Lato-Light";
+    font-style: normal;
+    font-weight: normal;
+    src: url(fonts/Lato-Light.ttf) format("truetype");
+  }
+
+
+@font-face {
+    font-family: "Telefon black";
+    font-style: normal;
+    font-weight: normal;
+    src: url(fonts/telefon-black-webfont.ttf) format("truetype");
+  }
+
+
+
+
+
+   
+html {  height: 100%; }
+
+body {
+  
+ background: #191919;
+  font-family: "Lato";
+  height: 100%;
+
+
+ 
+}
+
+body * {
+  box-sizing: border-box;
+  text-decoration: none;
+
+
+
+}
+
+body .navigation {
+  margin: 0 auto;
+  text-align: left;
+  
+  
+  color: rgba(255,255,255,0.6);
+  position: absolute;
+  width:100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select:none;
+  overflow: hidden;
+  border-bottom: 1px solid #222;
+}
+
+body .navigation ul {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  margin-left:12vw;
+}
+
+body .navigation li {
+  display: inline-block;
+  
+  cursor:pointer;
+  height: 4vw;
+  padding-top: 1.4vw;
+  margin-right: 2.1vw;
+  
+  font-family: "Lato", "Lucida Grande","Lucida Sans Unicode", Tahoma, Sans-Serif;
+  font-size:1.2vw;
+  font-weight: bold;
+
+}
+
+
+
+#line {
+  position: absolute;
+  width: 100px;
+  bottom: -0px;
+  background: rgba(255,255,255,1);;
+  height: 4px;
+  left: 0px;
+  transition: all 0.3s ease-in-out;
+}
+
+.active{
+	color: rgba(255,255,255,1);
+
+
+}
+
+
+
+.brand{
+	background-image: url(images/logo.png);
+	background-size: 2.5vw 2.5vw;
+	width:2.5vw;
+	height:2.5vw;
+	position: absolute;
+	right: 4.8vw;
+	top:0.7vw;
+	cursor: pointer;
+	opacity: 0.4;
+	cursor:pointer;
+}
+
+.logout{
+	background-image: url(images/logout.png);
+	background-size: 1.4vw 1.4vw;
+	background-repeat: no-repeat;
+	background-position: center;
+	width:2.1vw;
+	height:1.4vw;
+	position: absolute;
+	right: 1.4vw;
+	top:1.4vw;
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+
+.logosimon{
+	background-image: url(images/logosimon.png);
+    background-size: 8vw 2vw;
+	background-repeat: no-repeat;
+	height: 2vw;
+	width:9vw;
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index: 9000;
+	margin-top:1vw;
+	margin-left:1vw;
+	cursor: pointer;
+}
+
+.brand:hover{ opacity: 1; }
+.logout:hover{ opacity: 0.9; }
+
+.panel{
+	width:100%;
+	margin-top:4vw;
+	display:inline-block;
+	padding:4vw;
+	background: #191919;
+    height: 100%;
+    
+}
+
+
+/* estilos de las ventanas */
+.contenedor	{
+   	 		margin: 0 auto;
+      		position:relative;
+  	 		background-color: rgba(255,255,0,0);
+  			}
+
+  	 
+
+
+ .titulo{
+      color:white;
+      font-size: 3vw;
+      font-family: "Telefon black";
+      border-bottom: 0.3vw solid #0ebeff;
+      padding-bottom: 0.5vw;
+      width:100%;
+    }  	 
+
+
+</style>
+
+  
+
+</head>
+
+<body>
+  
+
+
+
+
+<div class="navigation">
+  <div class="logosimon"></div>
+  <ul class="nav">
+    <li class="active menuItem" data-source="dashboard.html">Dashboard</li>
+    <li class="menuItem" data-source="datos.html">Datos</li>
+    <li class="menuItem" data-source="entrenar.html">Entrenar</li>
+    <li class="menuItem" data-source="estadisticas.html">Estadisticas</li>
+    <li class="menuItem" data-source="auditoria.html">Auditoria</li>
+    <li class="menuItem" data-source="configurar.html">Configurar</li>
+  </ul>
+  <div class="brand menuItem" data-source="about.html"></div>
+  <div class="logout menuItem" data-source="salir.html"></div>
+  
+  <span id="line"></span>
+</div>
+  
+<div class="panel">
+</div>
+
+
+<script src='js/jquery-2.2.4.min.js'></script>
+<script src="js/index.js"></script>
+<script src="js/gridengine.js"></script>
+
+</body>
+</html>

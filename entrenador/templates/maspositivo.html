@@ -1,0 +1,91 @@
+
+<style type="text/css">
+	
+
+
+.contenedor{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left:0;
+	top:0;
+	padding:0px;
+	margin: 0px;
+	/*--------------*/
+	padding-top:5px;
+	font-family: monserrat-semibold, sans-serif;
+
+}	
+
+
+
+
+
+
+.titulo{
+	color:white;
+	font-size:12px;
+	width:100%;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: 400;
+	position:absolute;
+	left:0px;
+	top:10px;
+}
+
+.renglon{
+	color: #00ff00;
+	font-family: monserrat-semibold, sans-serif;
+	width:85%;
+	transform: translateY(-50%);
+	font-size: 14px;
+	margin: 0 auto;
+}
+
+
+.medio{
+  width:60%;
+  float:left;	
+}
+
+.valor{
+	width:20%;
+	float:left;	
+	text-align: right;
+}
+
+.lista{
+	width:100%;
+	position: absolute;
+	left:0px;
+	top:30px;	
+}
+
+</style>
+
+
+<div class="contenedor" >
+
+  <div class="titulo">POLARIZACION POSITIVA</div>
+
+ <div class="lista">
+	 <loop1>   
+	 [bloque1;block=loop1]
+	    <div class='renglon'>
+	      <div class="medio">[bloque1.medio;strconv=no]</div>
+	      <div class="valor">[bloque1.positiva;strconv=no]%</div>
+	      <div class="valor">[bloque1.negativa;strconv=no]%</div>
+
+	    </div>
+	     
+	 </loop1>
+
+</div>
+
+
+
+</div>
+
+
+

@@ -1,0 +1,135 @@
+
+<style type="text/css">
+	
+
+
+.contenedor{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left:0;
+	top:0;
+	padding:0px;
+	margin: 0px;
+	/*--------------*/
+	padding-top:5px;
+	font-family: monserrat-semibold, sans-serif;
+
+}	
+
+
+
+.titulo{
+	color:white;
+	font-size:12px;
+	width:100%;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: 400;
+	position:absolute;
+	left:0px;
+	top:10px;
+}
+
+
+@keyframes grow-padding-right {
+    from {
+      width: 0;
+    }
+}
+
+
+
+
+.barra {
+  color: white;
+  
+  margin-bottom: 1px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+
+}
+
+.linea {
+	
+  background: rgba(0,0,255,0.9);
+  padding: 3px;
+  
+  width: 80px;
+  font-size: 10px;
+  /* para que no se corte la palabra a medida que crece la barra*/
+  white-space: nowrap;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  
+}
+
+.valor{
+  
+  position: absolute;
+  right:5px;
+  top:50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  
+}
+
+
+.grafico-barra{
+	width:90%;
+	position: absolute;
+	left:5%;
+	top:45px;
+	font-family: monserrat-regular, sans-serif;	
+}
+
+
+</style>
+
+ 
+<div class="contenedor" >
+
+  <div class="titulo">TEMAS MAS MENCIONADOS<br>Bigramas</div>
+
+    <div class="grafico-barra">
+
+     <loop1>   
+	 [bloque1;block=loop1] 
+	      <div class="barra">
+	        <div class="linea" style="width:45%;">&nbsp;[bloque1.key;strconv=no]</div><div class="valor">[bloque1.val]</div>
+	      </div>
+	      
+          
+	 </loop1>
+
+     
+    
+    </div>
+ 
+</div>
+</div>
+  
+
+<script>
+
+
+var valorInicial=0; 
+var valorBarra=0;
+$('.barra').each(function (index, value) { 
+    
+    valorBarra=$(this).children(".valor").text();
+    if(valorInicial==0){ 
+    	valorInicial=valorBarra;
+        $(this).children(".linea").css("width","85%"); 
+        return true;
+    }	
+
+    valorBarra= (valorBarra / valorInicial) * 85;
+    $(this).children(".linea").css("width",valorBarra+"%");
+
+});
+
+</script>
+
+

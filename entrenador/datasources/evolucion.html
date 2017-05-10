@@ -1,0 +1,80 @@
+
+<style type="text/css">
+	
+
+
+.contenedor{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left:0;
+	top:0;
+	padding:0px;
+	margin: 0px;
+	/*--------------*/
+	padding-top:5px;
+	font-family: monserrat-semibold, sans-serif;
+
+}	
+
+
+
+
+
+
+.titulo{
+	color:white;
+	font-size:12px;
+	width:100%;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: 400;
+	position:absolute;
+	left:0px;
+	top:10px;
+}
+
+
+
+</style>
+
+
+<div class="contenedor" id="grafico1">
+
+  <div class="titulo">EVOLUCION NOTICIAS<br>Totales vs. Gestión</div>
+
+  <div id='chart1' style='width: 100px; height: 100px;'></div>
+  
+
+
+
+
+</div>
+
+
+<script>
+  var ancho=$("#grafico1").width();
+  var alto=$("#grafico1").height();
+  
+  $("#chart1").css("width",ancho+"px");
+  $("#chart1").css("height",alto+"px");
+
+
+ Morris.Line({
+  element: 'chart1',
+  lineColors: ['cyan', 'white'],
+  data: [
+    {fechas:"18/04", totales:11, gestion:2},{fechas:"19/04", totales:364, gestion:35},{fechas:"20/04", totales:381, gestion:23},{fechas:"21/04", totales:401, gestion:50},{fechas:"22/04", totales:162, gestion:19},{fechas:"23/04", totales:155, gestion:20},{fechas:"24/04", totales:335, gestion:40},{fechas:"25/04", totales:309, gestion:29},
+  ],
+  smooth: true,
+  xkey: 'fechas',
+  grid: false,
+  ykeys: ['totales','gestion'],
+  labels: ['totales','gestion'],
+  hideHover: true,
+  parseTime: false,
+  yLabelFormat: function (y) { return Math.floor(y); },
+});
+
+  
+</script>

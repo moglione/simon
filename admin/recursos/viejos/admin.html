@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>title</title>
+ 
+    
+	<style type="text/css">
+	
+    @font-face {
+	  font-family: "Montserrat-Light";
+	  font-style: normal;
+	  font-weight: normal;
+	  src: url(fonts/Montserrat-Light.ttf) format("truetype");
+	}
+
+
+
+    @font-face {
+	  font-family: "Montserrat-Regular";
+	  font-style: normal;
+	  font-weight: normal;
+	  src: url(fonts/Montserrat-Regular.ttf) format("truetype");
+	}
+
+	
+	body{
+		background-color: rgba(28,26,29,1);
+		margin:0;
+		
+		
+		
+	}
+
+	
+     .menu{
+     	position:fixed;
+     	left:0px;
+     	top:0px;
+     	width:255px;
+     	height:100vh;
+        padding-left:70px;
+        padding-top:50px;
+        box-sizing: border-box;
+
+     	
+     }
+
+	.menuItem{
+		font: 18px "Montserrat-Light", helvetica, arial, sans-serif;
+		color:rgba(136,127,140,1);
+		line-height: 40px;
+		cursor: pointer;
+	}
+
+	.menuItem.activo{ color:rgba(219,216,220,1);}
+	.menuItem:hover{ color:rgba(219,216,220,1);}
+
+	.separadormenu1{
+		height:25px;
+		width:100%;
+		
+	}
+
+	.separadormenu2{
+		height:32px;
+		width:100%;
+		
+	}
+
+	.panel{
+		position:absolute;
+		left:255px;
+		top:0px;
+       
+        
+        padding-top:50px;
+        box-sizing: border-box;
+
+       
+
+	}
+
+	</style>
+
+   
+  </head>
+  
+
+  <body>
+   
+  	  <div class="menu">
+  	  
+         <div class="menuItem activo" data-source="dashboard.html" >Dashboard</div>
+         <div class="separadormenu1"></div>
+  	     <div class="menuItem" data-source="ingestar.html">Ingestar Datos</div>
+  	     <div class="menuItem" data-source="digestar.html">Digestar</div>
+  	     <div class="menuItem" data-source="entrenar.html">Entrenar</div>
+  	     <div class="menuItem" data-source="estadisticas.html">Estadisticas</div>
+  	     <div class="menuItem" data-source="auditoria.html">Auditoria</div>
+  	     <div class="separadormenu2"></div>
+  	     <div class="menuItem" data-source="configurar.html">Configurar</div>
+  	     <div class="menuItem" data-source="salir.html">Salir</div>
+
+  	  </div> 
+  	  <!-- FIN MENU -->
+
+  	  <div class="panel">
+
+  	  </div> 
+  	  <!-- FIN PANEL -->
+
+      
+  	  
+
+
+		<script src="js/jquery-2.2.4.min.js"></script>
+		<script type="text/javascript">
+ 
+		    $( ".panel" ).load( "ventanas/dashboard.html" );
+
+		  	$( ".menuItem" ).click(function() {
+		  		$( ".menuItem" ).removeClass( "activo" );
+		  		$(this).addClass( "activo" );
+		  		var cargar=$(this).attr("data-source");
+		  		$( ".panel" ).load( "ventanas/"+cargar );
+			});
+		 
+ 		</script>
+
+  </body>
+</html>

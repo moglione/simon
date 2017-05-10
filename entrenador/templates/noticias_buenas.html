@@ -1,0 +1,102 @@
+
+<style type="text/css">
+	
+
+
+.contenedor{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left:0;
+	top:0;
+	padding:0px;
+	margin: 0px;
+	/*--------------*/
+	padding-top:5px;
+	font-family: monserrat-semibold, sans-serif;
+
+}	
+
+
+
+
+
+
+.titulo{
+	color:white;
+	font-size:12px;
+	width:100%;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: 400;
+	position:absolute;
+	left:0px;
+	top:10px;
+}
+
+#gauge{
+  
+  width:100%;
+  height:100%;
+  position: absolute;
+  top:15px;
+  
+}
+
+.chart {
+  position:relative;
+  margin:30px auto 0 auto;
+  
+}
+
+.tag {
+  width:100%;
+  font-family: monserrat-semibold, sans-serif;
+  text-align:center;
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  color:#00ff00;
+  font-size:28px;
+  font-weight: 800;
+}
+
+.bajada{
+   font-size: 12px;
+   font-family: monserrat-light, sans-serif;
+   font-weight: 400;
+   color: #ffffff;
+}
+
+
+</style>
+
+
+<div class="contenedor">
+
+<div class="titulo">NOTICIAS POSITIVAS</div>
+
+<div id="gauge" >
+   <div class="buenas chart">
+       <div class="tag">[onshow.PercentgestionPositivas]%<br><div class="bajada">[onshow.pertinentes_pos] de [onshow.count_pertinentes]</div></div>
+   </div>	
+
+
+</div>
+
+
+
+
+</div>
+
+
+<script>
+   $('.buenas').percentPie({
+            width: 150,
+            trackColor: "rgba(0,0,0,0.15)",
+            barColor: "#00ff00",
+            barWeight: 25,
+            endPercent: [onshow.PercentgestionPositivas]/100,
+            fps: 60
+          });
+</script>

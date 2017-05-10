@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<meta http-equiv="Expires" content="0">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+
+  <style type="text/css">
+    * {
+      padding: 0;
+      margin: 0;
+      border: 0;
+    }
+
+    body {
+      background: #eee;
+      padding: 0;
+      border:0;
+      color:white;
+    }
+
+   
+
+    #gallery {
+      list-style: none;
+      width: 100vw;
+      height:100vh;
+      background: #111;
+      cursor: hand;
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+      cursor: grab;
+      position: absolute;
+      top:0px;
+      left:0px;
+    }
+
+    #gallery li {
+      border-right: 5px solid #111;
+    }
+
+    #gallery .item {
+      height: 100%;
+    }
+
+    #gallery li:last-child  {
+      border: 0;
+    }
+
+	.caja2{
+	  margin-bottom:3px;
+	  width:49.3%;
+	  display: inline-block;
+	  background-color: #363636;
+	  padding: 10px;
+	  box-sizing: border-box;
+	  
+	} 
+
+	.caja{
+	  margin-bottom:3px;
+	  width:100%;
+	  display: inline-block;
+	  background-color: #363636;
+	  padding-top: 10px;
+	  padding-bottom: 10px;
+	  box-sizing: border-box;
+	} 
+
+
+	.pie{
+	  width:100%;
+	  display: inline-block;
+	  background-color: #363636;
+	  padding-top: 10px;
+	  padding-bottom: 10px;
+	  box-sizing: border-box;
+	} 
+
+	.open {
+	  transform: rotate(-30deg);
+	}
+
+	.about{
+	  width:100vw;
+	  height: 100vh;
+	  position: fixed;
+	  top:0px;
+	  left:0px;
+	  background-image: url(images/simon.png);
+	  background-size: 100% ;
+	  background-position: 0px 0px;
+	  
+	 
+	}
+
+
+	.sinimagen{
+	  width:0vw;
+	  height: 0vh;
+	  -webkit-transition-property: all; /* Safari */
+	  -webkit-transition-duration: 1ms; /* Safari */
+	  -webkit-transition-delay: 0.25s; /* Safari */
+	  
+	  transition-property: all;
+	  transition-duration: 1ms;
+	  transition-delay: 0.25s;
+	}
+	 
+
+    .paneles {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  transform-origin: 0 0;
+  
+  z-index:8000;
+  overflow:auto;
+  
+}
+
+.dias3{
+  background-color: #303045;
+}
+
+  </style>
+
+  
+
+</head>
+<body>
+
+
+    <div id="gallery">
+      <ul>
+        
+        <li class="dragend-page">
+          
+            <div class="about sinimagen"  onclick="cerrarAbout()"></div>
+            <div class="paneles"> 
+                <div class="caja" onclick="funcionHeader()" ><img src="cache/cache7/periodo.png" width="100%" height="auto"></div>
+                <div class="caja"><img src="cache/cache7/infotext.png" width="100%" height="auto"></div>
+  		          <div class="caja2"><img src="cache/cache7/gaugeneg.png" width="100%" height="auto"></div>
+  		          <div class="caja2"><img src="cache/cache7/gaugepos.png" width="100%" height="auto"></div>
+  		          <div class="caja"><img src="cache/cache7/humor.png" width="100%" height="auto"></div>
+  		          <div class="caja"><img src="cache/cache7/evolucionpn.png" width="100%" height="auto"></div>
+  		          <div class="caja"><img src="cache/cache7/evoluciontotales.png" width="100%" height="auto"></div>
+  		          <div class="caja"><img src="cache/cache7/polarizacion_gap.png" width="100%" height="auto"></div>
+  		          <div class="caja"><img src="cache/cache7/temas.png" width="100%" height="auto"></div>
+  		          <div class="caja"><img src="cache/cache7/personas.png" width="100%" height="auto"></div>
+  		          <div class="pie"onclick="girar()" ><img src="images/pie.png" width="100%" height="auto"></div>
+  			    </div>
+          
+        </li>
+        
+        <li class="dragend-page">
+         
+            <div class="about sinimagen"  onclick="cerrarAbout()"></div>
+            <div class="paneles"> 
+                <div class="caja dias3" onclick="funcionHeader()" ><img src="cache/cache3/periodo.png" width="100%" height="auto"></div>
+                <div class="caja dias3"><img src="cache/cache3/infotext.png" width="100%" height="auto"></div>
+                <div class="caja2 dias3"><img src="cache/cache3/gaugeneg.png" width="100%" height="auto"></div>
+                <div class="caja2 dias3"><img src="cache/cache3/gaugepos.png" width="100%" height="auto"></div>
+                <div class="caja dias3"><img src="cache/cache3/humor.png" width="100%" height="auto"></div>
+                <div class="caja dias3"><img src="cache/cache3/evolucionpn.png" width="100%" height="auto"></div>
+                <div class="caja dias3"><img src="cache/cache3/evoluciontotales.png" width="100%" height="auto"></div>
+                <div class="caja dias3"><img src="cache/cache3/polarizacion_gap.png" width="100%" height="auto"></div>
+                <div class="caja dias3"><img src="cache/cache3/temas.png" width="100%" height="auto"></div>
+                <div class="caja dias3"><img src="cache/cache3/personas.png" width="100%" height="auto"></div>
+                <div class="pie dias3"onclick="girar()" ><img src="images/pie.png" width="100%" height="auto"></div>
+            </div>
+                  
+  			</div>
+          
+        </li>
+        
+        <li class="dragend-page">
+          <div class="item">
+             hola 3
+          </div>
+        </li>
+      
+      </ul>
+    </div>
+
+
+ 
+
+
+  
+  <script type="text/javascript" src="js/dragendtwo.js"></script>
+  <script src="js/indexswp.js"></script>
+
+  <script>
+
+  new Dragend(document.getElementById("gallery"), { borderBetweenPages: 5, minDragDistance: "40" });
+
+  
+   
+
+  </script>
+
+</body>
+</html>

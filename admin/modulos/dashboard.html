@@ -1,0 +1,63 @@
+
+  <style type="text/css">
+    
+   .tile{ 
+      padding:10px; 
+      padding-left:2vw; 
+      color:rgba(255,255,255,1);
+      background: #2F2F31; 
+      position: absolute;
+    }
+
+    .dashboard{
+      margin-top:2vw;
+      background-color: pink;
+      width: 100%;
+      position: relative;
+    }
+ 
+  </style>
+    
+
+  <div class="contenedor">
+
+     <div class="titulo">Dashboards</div>
+
+      
+     <div class="dashboard">
+        
+        <div class="tile pos0-0 size2-1"></div> 
+        <div class="tile pos2-0 size2-1"></div>
+        <div class="tile pos4-0 size2-1"></div>
+        <div class="tile pos0-1 size6-2"></div>
+
+        <div class="tile pos0-3 size3-3" id="bdd"></div>
+        <div class="tile pos3-3 size3-3" id="ranking"></div>
+        <div class="tile pos6-0 size2-2"></div>
+        <div class="tile pos6-2 size1-1"></div>
+        <div class="tile pos7-2 size1-1"></div>
+        <div class="tile pos8-0 size2-1"></div>
+        <div class="tile pos8-1 size2-2"></div>
+        <div class="tile pos10-0 size2-3"></div>
+     </div>
+ 
+
+	</div>
+
+  <div id="dummy"></div>
+   	
+
+    <script type="text/javascript">
+      var contenedor=$(".dashboard");
+      var tile=$(".tile");
+      contenedor.fadeOut(0);
+      contenedor.fadeIn(500);
+     
+      grillar();
+      $(window).on('resize', grillar);
+
+
+   	</script>
+  
+     
+ 

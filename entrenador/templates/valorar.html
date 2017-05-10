@@ -1,0 +1,618 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Entrenmiento Simon 001</title>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+<style>
+
+
+body {
+  background-color: #000000;
+}
+
+
+
+label {
+  font-family: 'Open Sans', Sans;
+  font-weight: 100;
+  font-size: 36px;
+  color: #a0a0a0;
+}
+
+.container {
+  font-family: 'Open Sans', Sans;
+  font-weight: 100;
+  font-size: 18px;
+  color: #484850;
+  width: 55%;
+  padding: 50px;
+  margin: 40px auto;
+}
+
+.internal{
+  font-family: 'Open Sans', Sans;
+  font-weight: 100;
+  font-size: 12px;
+  
+}
+
+
+
+
+.ventana_animate {
+  transition: top 75ms ease-out,left 75ms ease-out;
+}
+
+
+
+.noticia{
+	padding: 10px 20px 10px 20px;
+	margin-top:10px;
+	border-radius: 8px;
+  position: relative;
+}
+
+.interno{
+	padding: 10px 20px 10px 20px;
+	margin-bottom:30px;
+}
+
+.verde{ background-color:green; color:white; }
+.rojo{ background-color:red; color:white; }
+.gris{ background-color:DarkSlateGray; color:white; }
+.azul { background: #33B6E6; }
+
+.verdebadge{ background-color:lime; color:black; }
+.rojobadge{ background-color:FireBrick; color:white; }
+
+
+
+h2{ padding: 0px; margin-top:-2px; margin-bottom:-10px; }
+h4{ margin-top: 0px; margin-bottom:-3px; font-size: 12px; font-weight: 500; }
+
+/* botones */
+
+.btn {
+
+  
+  font-family: 'Open Sans', Sans;
+  font-weight: 100;
+  font-size: 18px;
+  
+   text-decoration: none; 
+  
+  
+  position: relative;
+ 
+  text-align: center;
+  display: inline-block;
+  border-radius: 5px;
+  transition: box-shadow 0.4s;
+  cursor: pointer;
+ 
+  border-style:dotted;
+  border-width: 1px;
+  border-color: white;
+
+  margin-top:15px;
+  padding-left:5px;
+  padding-top:5px;
+}
+
+.btn:hover {
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.badge {
+  
+  font-size: 10px;
+  font-weight: 800;
+  padding: 5px;
+  border-radius: 10px 10px 10px 10px;
+  position: absolute;
+  top: -12px;
+  left:5px;
+  line-height: 10px;
+  
+}
+
+
+.palabra { margin-right:10px; }
+
+
+#ventana {
+  font-family: 'Open Sans', Sans;
+  font-weight: 100;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 5px;
+  background: rgba(255,255,255,1);
+  position: fixed;
+  
+  width:500px;
+  height: 250px;
+
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+
+   box-shadow: 0 4px 8px 0 rgba(128, 128, 128, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   overflow: hidden;
+}
+
+#palabra { 
+	padding:5px 0px 5px 0px; 
+	margin: 0 auto;
+	color: white;
+	text-align: center;
+	font-weight: 800;
+	width:100%;
+	background-color: blue;
+	overflow: hidden;
+}
+
+
+
+#respuesta { 
+  padding:0px;
+  padding-top:5px; 
+  margin: 0 auto;
+  color: black;
+  text-align: center;
+  font-weight: 800;
+  width:100%;
+  
+}
+ 
+
+.botonVentana{
+ width:100px;
+ height:30px;
+ background-color: #ff0000;
+ position: absolute;
+ right:10px;
+ bottom:10px;
+ text-align: center;
+ color: white;
+ font-size:18px;
+ line-height: 30px;
+cursor: pointer;
+}
+
+.guardar{
+   background-color: blue;
+   right:115px;
+}
+
+.borrar{
+   background-color: orange;
+   right:220px;
+}
+
+.guardarentidad{
+   background-color: indigo;
+   right:340px;
+   width:150px;
+}
+
+
+
+#cerrar:hover{
+ background-color: #aa0000;
+}
+
+#editarpalabra{
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  
+
+}
+
+#editarvalor{
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.noselect {
+  -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+}
+
+/* el slider */
+
+
+
+.range-slider {
+  margin: 10px 0 0 90px;
+}
+
+.range-slider {
+  width: 80%;
+ 
+}
+
+.range-slider__range {
+  -webkit-appearance: none;
+  width: calc(100% - (93px));
+  height: 10px;
+  border-radius: 5px;
+  background: #d7dcdf;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+.range-slider__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2c3e50;
+  cursor: pointer;
+  -webkit-transition: background .15s ease-in-out;
+  transition: background .15s ease-in-out;
+}
+.range-slider__range::-webkit-slider-thumb:hover {
+  background: #1abc9c;
+}
+.range-slider__range:active::-webkit-slider-thumb {
+  background: #1abc9c;
+}
+.range-slider__range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  background: #2c3e50;
+  cursor: pointer;
+  -webkit-transition: background .15s ease-in-out;
+  transition: background .15s ease-in-out;
+}
+.range-slider__range::-moz-range-thumb:hover {
+  background: #1abc9c;
+}
+.range-slider__range:active::-moz-range-thumb {
+  background: #1abc9c;
+}
+
+.range-slider__value {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  color: #fff;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 3px;
+  background: #2c3e50;
+  padding: 5px 10px;
+  margin-left: 8px;
+}
+.range-slider__value:after {
+  position: absolute;
+  top: 8px;
+  left: -7px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-right: 7px solid #2c3e50;
+  border-bottom: 7px solid transparent;
+  content: '';
+}
+
+::-moz-range-track {
+  background: #d7dcdf;
+  border: 0;
+}
+
+input::-moz-focus-inner,
+input::-moz-focus-outer {
+  border: 0;
+}
+
+/**************/
+.id{
+  
+   width:100px;
+   position: absolute;
+   left: -105px;
+   top: 10px;
+   text-align:right;
+   color:gray;
+   font-size:12px;
+   
+
+}
+
+.cabezal{
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	color:white;
+	background-color: gray;
+	padding:5px;
+	margin-bottom:20px;
+	z-index:9000;
+}
+
+.infotext{ 
+	margin-top: 0px; 
+	margin-bottom:-3px; 
+	font-size: 12px; 
+	font-weight: 500; 
+}
+
+
+</style>
+</head>
+
+<body>
+
+ <div class="cabezal">
+           
+    <div class="info">
+           <div class="infotext noselect">[onshow.negativos] </div>
+           <div class="infotext noselect">[onshow.positivos] </div>
+           <div class="infotext noselect">[onshow.neutros] </div>
+           <div class="infotext noselect">[onshow.dudosas] </div>
+           <div class="infotext noselect">Total: [onshow.cantidad] </div>
+     </div>
+ 
+ </div>
+    
+
+<div class="container">
+
+     
+      <loop1>   
+	  	[bloque1;block=loop1]
+    		  
+          
+
+          <div class="noticia [bloque1.color]">
+              <div class="id">
+                  Nº [bloque1.id]<br> 
+                  [bloque1.fecha]<br> 
+                  [bloque1.medio]<br>
+              </div>
+    		      <h2 class="noselect">[bloque1.programa]</h2>
+    			    <p class="textonoticia"> [bloque1.noticia;strconv=no]  </p>
+    			    <h4 class="noselect">HUMOR= [bloque1.humor] </h4>
+              <h4 class="noselect">VALOR= [bloque1.valor]</h4>
+    			    
+    			</div>
+    			
+          <div class="interno">
+    			    [bloque1.interno;strconv=no]
+    			</div>  
+
+     
+		  </loop1>
+
+
+
+</div>
+	
+	
+ 
+
+
+
+	<div id="ventana" class="noselect" style="display:none;"> 
+	   <div id="palabra"></div>
+     <div id="respuesta"></div>
+    
+      <div class="range-slider">
+       <input class="range-slider__range" id="slider" type="range" value="0" min="-5" max="5" step="0.01" >
+       <span class="range-slider__value" id="slidervalue">0</span>
+     </div>
+
+		 <div id="cerrar" class="botonVentana">Cancelar</div>
+     <div id="guardar" class="botonVentana guardar">guardar</div>
+     <div id="borrar" class="botonVentana borrar">borrar</div>
+     <div id="guardarentidad" class="botonVentana guardarentidad">guardar entidad</div>
+	</div>
+
+
+
+    
+    <script src="js/jquery-2.2.4.min.js"></script>
+    
+
+
+    <script>
+  	
+	  	
+      ///////////////////////////////////////////////////////////////////
+
+      function callPHP(params){
+            var httpc = new XMLHttpRequest(); // simplified for clarity
+            var url = "editar-palabra.php";
+            httpc.open("POST", url, true); // sending as POST
+
+            httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            //httpc.setRequestHeader("Content-Length", params.length); // POST request MUST have a Content-Length header (as per HTTP/1.1)
+
+            httpc.onreadystatechange = function()//Call a function when the state changes. 
+            { 
+              if(httpc.readyState == 4 && httpc.status == 200) // complete and no errors
+              { 
+                  
+                  
+                  var respuesta=$('#respuesta');
+                  respuesta.html(httpc.responseText); 
+                   
+                  
+                  var valorObjeto= $("#editarvalor").text() ; 
+                  if(valorObjeto=="No esta en la base de datos")valorObjeto=0;
+                  $("#slider").val(valorObjeto);
+                  $("#slidervalue").text(valorObjeto);
+
+              }
+            }
+            httpc.send(params);
+      }
+
+  
+      ///////////////////////////////////////////////////////////////////
+
+
+	  	$(".textonoticia").mouseup(function() {
+        
+        
+        var menu = $('#ventana');
+        var titulo=$('#palabra');
+  	  	var s = document.getSelection();
+		  	var	r = s.getRangeAt(0);
+		  	var desp= $(window).scrollTop(); 
+        var viewportWidth = $(window).width();
+        var viewportHeight = $(window).height();
+        var alto =menu.height();
+        var ancho =menu.width();
+        var izquierda=0;
+        var arriba=0;
+        var top=0;
+        var palabra="";
+
+
+		    
+        if (r && s.toString()) {
+          palabra=s.toString();
+          palabra=$.trim(palabra);
+		  		izquierda =(viewportWidth-ancho)/2;
+		  		arriba =(viewportHeight-alto)/2;
+        	menu.css({ left: izquierda , 	top: arriba , display: 'block', opacity: 0 	}).animate({ opacity:1 }, 300);
+					setTimeout(function() { menu.addClass('ventana_animate'); }, 10);
+          titulo.text("VALORACION DE N-GRAMAS:");
+          callPHP('palabra='+palabra+'&editar=verificar');
+					return;
+				}
+		  	
+	  	});
+
+
+      ///////////////////////////////////////////////////////////////////
+       $(".btn").click(function() {
+
+        
+            var palabraObjeto= $(this).children(".palabra").text() ;
+            var valorObjeto= $(this).children(".badge").text() ;
+
+            var menu = $('#ventana');
+            var titulo=$('#palabra');  
+            var desp= $(window).scrollTop(); 
+            var viewportWidth = $(window).width();
+            var viewportHeight = $(window).height();
+            var alto =menu.height();
+            var ancho =menu.width();
+
+            $("#slider").val(valorObjeto);
+            $("#slidervalue").text(valorObjeto);
+
+            izquierda =(viewportWidth-ancho)/2;
+            arriba =(viewportHeight-alto)/2;
+            menu.css({ left: izquierda ,  top: arriba , display: 'block', opacity: 0  }).animate({ opacity:1 }, 300);
+            setTimeout(function() { menu.addClass('ventana_animate'); }, 10);
+             titulo.text("VALORACION DE N-GRAMAS:");
+            callPHP('palabra='+palabraObjeto+'&editar=verificar');
+            return;
+        });
+      ///////////////////////////////////////////////////////////////////
+
+      $("#cerrar").click(function() {
+                
+        var menu = $('#ventana');
+        menu.animate({ opacity:0 }, function () {   menu.hide().removeClass('ventana_animate'); });
+
+      });
+
+       ///////////////////////////////////////////////////////////////////
+
+      $("#guardar").click(function() {
+                
+        var palabraObjeto= $("#editarpalabra").text() ;
+        var valorObjeto= $("#editarvalor").text() ;
+        var valor= $("#slider").val();
+
+        var menu = $('#ventana');
+        menu.animate({ opacity:0 }, function () {   menu.hide().removeClass('ventana_animate'); });
+
+        if(valorObjeto=="No esta en la base de datos" && valor==0)return;
+       
+        callPHP('palabra='+palabraObjeto+'&valor='+valor+'&editar=guardar');
+        
+
+      });
+
+       ///////////////////////////////////////////////////////////////////
+
+      $("#borrar").click(function() {
+                
+        var palabraObjeto= $("#editarpalabra").text() ;
+        var valorObjeto= $("#editarvalor").text() ;
+        var valor= $("#slider").val();
+
+        var menu = $('#ventana');
+        menu.animate({ opacity:0 }, function () {   menu.hide().removeClass('ventana_animate'); });
+
+        if(valorObjeto=="No esta en la base de datos" && valor==0)return;
+       
+        callPHP('palabra='+palabraObjeto+'&valor='+valor+'&editar=borrar');
+        
+
+      });
+
+     ///////////////////////////////////////////////////////////////////
+
+      $("#guardarentidad").click(function() {
+                
+        var palabraObjeto= $("#editarpalabra").text() ;
+        var valorObjeto= $("#editarvalor").text() ;
+        var valor= $("#slider").val();
+
+        var menu = $('#ventana');
+        menu.animate({ opacity:0 }, function () {   menu.hide().removeClass('ventana_animate'); });
+        callPHP('palabra='+palabraObjeto+'&editar=guardarentidad');
+        
+
+      });
+      
+
+     /////////////////////////////////////////////////////////////////// 
+     var rangeSlider = function(){
+          var slider = $('.range-slider'),
+              range = $('.range-slider__range'),
+              value = $('.range-slider__value');
+            
+          slider.each(function(){
+
+            value.each(function(){
+              var value = $(this).prev().attr('value');
+              $(this).html(value);
+              //$("#editarvalor").text(value);
+            });
+
+            range.on('input', function(){
+              $(this).next(value).html(this.value);
+              //$("#editarvalor").text(this.value);
+            });
+          });
+      };
+
+      rangeSlider();
+      
+
+</script>
+
+</body>
+</html>

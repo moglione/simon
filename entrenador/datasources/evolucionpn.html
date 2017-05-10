@@ -1,0 +1,89 @@
+
+<style type="text/css">
+	
+
+
+.contenedor{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left:0;
+	top:0;
+	padding:0px;
+	margin: 0px;
+	/*--------------*/
+	padding-top:5px;
+	font-family: monserrat-semibold, sans-serif;
+
+}	
+
+
+
+
+
+
+.titulo{
+	color:white;
+	font-size:12px;
+	width:100%;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: 400;
+	position:absolute;
+	left:0px;
+	top:10px;
+}
+
+
+
+</style>
+
+
+<div class="contenedor" id="grafico2">
+
+  <div class="titulo">EVOLUCION NOTICIAS<br>Positivas vs. Negativas </div>
+
+  <div id='chart2' style='width: 100px; height: 100px;'></div>
+  
+
+
+
+
+</div>
+
+
+<script>
+  var ancho=$("#grafico2").width();
+  var alto=$("#grafico2").height();
+  
+  $("#chart2").css("width",ancho+"px");
+  $("#chart2").css("height",alto+"px");
+
+
+ Morris.Line({
+  element: 'chart2',
+  lineColors: ['#00ff00', '#ff0000'],
+  data: [
+    {fechas:"18/04", positivas:0, negativas:2},
+{fechas:"19/04", positivas:25, negativas:10},
+{fechas:"20/04", positivas:16, negativas:7},
+{fechas:"21/04", positivas:44, negativas:5},
+{fechas:"22/04", positivas:17, negativas:2},
+{fechas:"23/04", positivas:17, negativas:3},
+{fechas:"24/04", positivas:32, negativas:8},
+{fechas:"25/04", positivas:20, negativas:8},
+
+  ],
+  smooth: true,
+  xkey: 'fechas',
+  grid: false,
+  ykeys: ['positivas','negativas'],
+  labels: ['positivas','nagativas'],
+  hideHover: true,
+  parseTime: false,
+  yLabelFormat: function (y) { return Math.floor(y); },
+  
+});
+
+  
+</script>

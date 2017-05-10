@@ -1,0 +1,20 @@
+<div id="actual"></div>
+
+<script src="js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+
+	var anterior=0
+	var actual=0;
+	var diferencia
+	function poll(){
+	   //document.writeln("hola<br>");
+
+	   
+	   $( "#actual" ).load( "crontime.php" );
+	  
+
+	}
+
+	setInterval(function(){ poll(); }, 1000);
+</script> 
+

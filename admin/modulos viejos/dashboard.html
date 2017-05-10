@@ -1,0 +1,95 @@
+
+  <style type="text/css">
+    
+    .titulo{
+      position: relative;
+      color:rgba(255,255,255,0.6);
+      font-size: 1vw;
+      font-family: SourceSansPro Regular, helvetica, arial, sans-serif;
+      text-transform: uppercase;
+      width:100%;
+    }
+
+    .tile{ 
+      padding:10px; 
+      padding-left:2vw; 
+      color:rgba(255,255,255,1);
+
+    }
+
+    .info{
+      color:rgba(255,255,255,0.4);
+      font-size: 0.8vw;
+      font-family: SourceSansPro Regular, helvetica, arial, sans-serif;
+      text-transform: uppercase;
+      width:100%;
+      margin-bottom: 0.4vw;
+
+      
+    }
+
+    .grande{
+      color:rgba(255,255,255,0.4);
+      font-size: 3.5vw;
+      font-family: SourceSansPro Regular, helvetica, arial, sans-serif;
+      text-transform: uppercase;
+      margin-top:1.5vw;
+      
+    }
+ 
+  </style>
+    
+
+    <div class="contenedor">
+
+      <div class="tile pos0-0 size3-3" id="bdd"></div>
+      <div class="tile pos3-0 size3-3" id="ranking"></div>
+      
+      <div class="tile pos6-0 size2-2"></div>
+      <div class="tile pos6-2 size1-1"></div>
+      <div class="tile pos7-2 size1-1"></div>
+      <div class="tile pos8-0 size2-1"></div>
+      <div class="tile pos8-1 size2-2"></div>
+      <div class="tile pos10-0 size2-3"></div>
+
+	</div>
+
+  <div id="dummy"></div>
+   	
+
+    <script type="text/javascript">
+      var contenedor=$(".contenedor");
+      var tile=$(".tile");
+      contenedor.fadeOut(0);
+      contenedor.fadeIn(500);
+     
+      grillar();
+      $(window).on('resize', grillar);
+
+
+      
+      // la actualizacion de cada widget cada 1 segundo (1000ms)
+      setInterval(actualizar,1000);
+      function actualizar(){
+             var anticache=Math.floor((Math.random() * 10000) + 1);
+             $("#bdd").load("datasources/cache/bdd.html?anticache="+ anticache);
+             $("#ranking").load("datasources/cache/ranking.html?anticache="+ anticache);
+             
+            
+        }
+
+
+       // la actualizacion de los datos de los widget cada 1 segundo (10000ms)
+      setInterval(actualizartodo,1000);
+      function actualizartodo(){
+             var anticache=Math.floor((Math.random() * 10000) + 1);
+             $("#dummy").load("datasources/bdd.php?anticache="+ anticache);
+             
+            
+        } 
+
+
+   	</script>
+  
+     
+ 
